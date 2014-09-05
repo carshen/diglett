@@ -4,15 +4,15 @@ Email myself flashcards once each specified time interval, using a screen. No cr
 
 Flashcard directory layout:
 -------------
-/flashcards
-	/topic1
-		a.answer
-		a.question
-	/topic2
-		/subtopic2-1
-			b.question
-			b.answer
-	/topic3
+	/flashcards
+		/topic1
+			a.answer
+			a.question
+		/topic2
+			/subtopic2-1
+				b.question
+				b.answer
+		/topic3
 
 Make sure a flashcard is stored in a folder with 2 text files with extension .question and .answer pls. 
 
