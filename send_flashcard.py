@@ -18,6 +18,7 @@ def choose_flashcard(root):
 		sys.exit("There are no questions to send! Script terminated.")
 	f = random.choice(dirfiles);
 
+	#
 	while (not os.path.isdir(os.path.join(root,f))) or len(os.listdir(os.path.join(root,f))) == 0:
 		f = random.choice(dirfiles)
 		if os.path.isdir(os.path.join(root,f)) and len(os.listdir(os.path.join(root,f))) == 2 and q_and_a(root,f):
@@ -43,7 +44,7 @@ def q_and_a(root, filename):
 
 def txt2html(txt):
 	"""Prettifies the text a little bit in HTML form."""
-	return '<pre style="font-size:3em;color:green">' + txt + '</pre>' # I could add an xss cleaner but these are my own text files lol.	
+	return '<pre style="font-size:1.5em;font-family:courier;">' + txt + '</pre>' # I could add an xss cleaner but these are my own text files lol.	
 
 def txtfile2html(qfilename):
 	"""Return the contents of the file named by qfilename as an HTML string."""
@@ -66,13 +67,13 @@ if nargs != 3:
 	sys.exit("Usage: ./send_flashcard.py [subject] [email address]. Script terminated.")
 
 # Remove all the backup *.*~ files.
-for dirname, subdirlist, filelist in os.walk('.'):
+for dirname, subdirlist, filelist in os.walk('./fldr'):
 	for fname in filelist:
 		if re.search(r".*\..*~", fname):
 			subprocess.Popen(['/bin/rm', os.path.join(dirname,fname)])
 
 # Obtain flashcard files and convert to html.
-[qpath, apath] = choose_flashcard('.'); # We start searching from the current directory.
+[qpath, apath] = choose_flashcard('./fldr'); # We start searching from the current directory.
 
 print qpath, apath
 qhtml = txtfile2html(qpath)
