@@ -3,7 +3,7 @@
 # Leech on school resources bwahahahahahaha.
 # Usage: ./emailer.sh 'subject' 'email address' seconds
 
-if [ $# -ne 4 ]; then
+if [ $# -ne 3 ]; then
 	echo "Usage: ./emailer.sh 'subject' 'email address' seconds"
 	exit 1
 fi
