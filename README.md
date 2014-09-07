@@ -23,6 +23,6 @@ Some downsides:
 * Also please unmark if marked as spam.
 
 
-Last updated - Sept 5th 2014 by Carolyn
+Last updated - Sept 5th 2014
 
 
